@@ -19,4 +19,4 @@ npm run dev
 E:\BookKepping-Solution\BookKeeping API
 
 3) Then BookKeeping-Script-sql file should be run under Microsoft sql server created database and use that database in the ConnectionStrings to store and get the data.
-The table already contains some data for testing porpose.
+The table already contains some data for testing purpose.
