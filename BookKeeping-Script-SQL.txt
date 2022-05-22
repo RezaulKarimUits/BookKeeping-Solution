@@ -1,0 +1,228 @@
+CREATE DATABASE [BooKeeping]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'BooKeeping', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\BooKeeping.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'BooKeeping_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\BooKeeping_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+ALTER DATABASE [BooKeeping] SET COMPATIBILITY_LEVEL = 150
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [BooKeeping].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [BooKeeping] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [BooKeeping] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [BooKeeping] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [BooKeeping] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [BooKeeping] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [BooKeeping] SET AUTO_CLOSE OFF 
+GO
+ALTER DATABASE [BooKeeping] SET AUTO_SHRINK OFF 
+GO
+ALTER DATABASE [BooKeeping] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [BooKeeping] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [BooKeeping] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [BooKeeping] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [BooKeeping] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [BooKeeping] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [BooKeeping] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [BooKeeping] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [BooKeeping] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+GO
+ALTER DATABASE [BooKeeping] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [BooKeeping] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [BooKeeping] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [BooKeeping] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [BooKeeping] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [BooKeeping] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [BooKeeping] SET RECOVERY SIMPLE 
+GO
+ALTER DATABASE [BooKeeping] SET  MULTI_USER 
+GO
+ALTER DATABASE [BooKeeping] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [BooKeeping] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [BooKeeping] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [BooKeeping] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+GO
+ALTER DATABASE [BooKeeping] SET DELAYED_DURABILITY = DISABLED 
+GO
+ALTER DATABASE [BooKeeping] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+GO
+ALTER DATABASE [BooKeeping] SET QUERY_STORE = OFF
+GO
+USE [BooKeeping]
+GO
+/****** Object:  Table [dbo].[IncomeVsExpense]    Script Date: 5/22/2022 5:07:26 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[IncomeVsExpense](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[TypeId] [int] NOT NULL,
+	[January] [decimal](18, 2) NULL,
+	[February] [decimal](18, 2) NULL,
+	[March] [decimal](18, 2) NULL,
+	[April] [decimal](18, 2) NULL,
+	[May] [decimal](18, 2) NULL,
+	[June] [decimal](18, 2) NULL,
+	[July] [decimal](18, 2) NULL,
+	[August] [decimal](18, 2) NULL,
+	[September] [decimal](18, 2) NULL,
+	[October] [decimal](18, 2) NULL,
+	[November] [decimal](18, 2) NULL,
+	[December] [decimal](18, 2) NULL,
+	[Year] [int] NOT NULL,
+ CONSTRAINT [PK_IncomeVsExpense] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[IncomeVsExpenseType]    Script Date: 5/22/2022 5:07:26 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[IncomeVsExpenseType](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IsIncome] [bit] NOT NULL,
+	[IsExpense] [bit] NOT NULL,
+	[ItemType] [int] NOT NULL,
+ CONSTRAINT [PK_IncomeVsExpenseType] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[Reconciliation]    Script Date: 5/22/2022 5:07:26 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Reconciliation](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[TypeId] [int] NOT NULL,
+	[January] [decimal](18, 2) NULL,
+	[February] [decimal](18, 2) NULL,
+	[March] [decimal](18, 2) NULL,
+	[April] [decimal](18, 2) NULL,
+	[May] [decimal](18, 2) NULL,
+	[June] [decimal](18, 2) NULL,
+	[July] [decimal](18, 2) NULL,
+	[August] [decimal](18, 2) NULL,
+	[September] [decimal](18, 2) NULL,
+	[October] [decimal](18, 2) NULL,
+	[November] [decimal](18, 2) NULL,
+	[December] [decimal](18, 2) NULL,
+	[Year] [int] NOT NULL,
+	[StatusId] [int] NULL,
+ CONSTRAINT [PK_Reconciliation] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[IncomeVsExpense] ON 
+GO
+INSERT [dbo].[IncomeVsExpense] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year]) VALUES (1, 1, CAST(300.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(900.00 AS Decimal(18, 2)), CAST(50.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(80.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)), CAST(400.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(30.00 AS Decimal(18, 2)), 2019)
+GO
+INSERT [dbo].[IncomeVsExpense] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year]) VALUES (2, 2, CAST(350.00 AS Decimal(18, 2)), CAST(40.00 AS Decimal(18, 2)), CAST(500.00 AS Decimal(18, 2)), CAST(70.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(50.00 AS Decimal(18, 2)), CAST(70.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(80.00 AS Decimal(18, 2)), CAST(300.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(50.00 AS Decimal(18, 2)), 2019)
+GO
+INSERT [dbo].[IncomeVsExpense] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year]) VALUES (3, 1, NULL, NULL, CAST(400.00 AS Decimal(18, 2)), CAST(50.00 AS Decimal(18, 2)), CAST(300.00 AS Decimal(18, 2)), NULL, NULL, CAST(600.00 AS Decimal(18, 2)), CAST(200.00 AS Decimal(18, 2)), NULL, NULL, CAST(100.00 AS Decimal(18, 2)), 2022)
+GO
+INSERT [dbo].[IncomeVsExpense] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year]) VALUES (4, 2, CAST(200.00 AS Decimal(18, 2)), CAST(50.00 AS Decimal(18, 2)), NULL, NULL, CAST(200.00 AS Decimal(18, 2)), CAST(60.00 AS Decimal(18, 2)), CAST(70.00 AS Decimal(18, 2)), NULL, CAST(50.00 AS Decimal(18, 2)), CAST(20.00 AS Decimal(18, 2)), NULL, CAST(90.00 AS Decimal(18, 2)), 2022)
+GO
+INSERT [dbo].[IncomeVsExpense] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year]) VALUES (5, 1, CAST(100.00 AS Decimal(18, 2)), CAST(50.00 AS Decimal(18, 2)), CAST(150.00 AS Decimal(18, 2)), CAST(0.00 AS Decimal(18, 2)), CAST(800.00 AS Decimal(18, 2)), CAST(50.00 AS Decimal(18, 2)), CAST(100.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, 2020)
+GO
+INSERT [dbo].[IncomeVsExpense] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year]) VALUES (6, 2, CAST(200.00 AS Decimal(18, 2)), CAST(70.00 AS Decimal(18, 2)), CAST(120.00 AS Decimal(18, 2)), CAST(200.00 AS Decimal(18, 2)), CAST(300.00 AS Decimal(18, 2)), CAST(50.00 AS Decimal(18, 2)), CAST(50.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, 2020)
+GO
+SET IDENTITY_INSERT [dbo].[IncomeVsExpense] OFF
+GO
+SET IDENTITY_INSERT [dbo].[IncomeVsExpenseType] ON 
+GO
+INSERT [dbo].[IncomeVsExpenseType] ([Id], [IsIncome], [IsExpense], [ItemType]) VALUES (1, 1, 0, 1)
+GO
+INSERT [dbo].[IncomeVsExpenseType] ([Id], [IsIncome], [IsExpense], [ItemType]) VALUES (2, 1, 0, 2)
+GO
+INSERT [dbo].[IncomeVsExpenseType] ([Id], [IsIncome], [IsExpense], [ItemType]) VALUES (3, 0, 1, 1)
+GO
+INSERT [dbo].[IncomeVsExpenseType] ([Id], [IsIncome], [IsExpense], [ItemType]) VALUES (4, 1, 0, 3)
+GO
+INSERT [dbo].[IncomeVsExpenseType] ([Id], [IsIncome], [IsExpense], [ItemType]) VALUES (5, 0, 1, 2)
+GO
+SET IDENTITY_INSERT [dbo].[IncomeVsExpenseType] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Reconciliation] ON 
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (1, 1, CAST(100.00 AS Decimal(18, 2)), NULL, CAST(70.00 AS Decimal(18, 2)), NULL, NULL, NULL, CAST(90.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, 2022, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (2, 2, CAST(50.00 AS Decimal(18, 2)), CAST(6.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2022, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (3, 3, NULL, NULL, CAST(7.00 AS Decimal(18, 2)), NULL, NULL, NULL, CAST(60.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, 2022, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (4, 1, NULL, NULL, NULL, NULL, NULL, NULL, CAST(30.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, 2022, 2)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (5, 2, CAST(80.00 AS Decimal(18, 2)), NULL, CAST(30.00 AS Decimal(18, 2)), NULL, NULL, NULL, CAST(30.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, 2022, 2)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (6, 1, CAST(100.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2023, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (7, 2, NULL, NULL, CAST(5.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2023, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (8, 3, NULL, NULL, NULL, NULL, CAST(5.00 AS Decimal(18, 2)), NULL, NULL, NULL, CAST(10.00 AS Decimal(18, 2)), NULL, NULL, NULL, 2023, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (9, 1, NULL, NULL, NULL, NULL, NULL, NULL, CAST(4.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, 2023, 2)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (10, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, CAST(10.00 AS Decimal(18, 2)), CAST(30.00 AS Decimal(18, 2)), 2023, 2)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (11, 1, CAST(1200.00 AS Decimal(18, 2)), NULL, NULL, CAST(52.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2020, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (12, 2, CAST(251.00 AS Decimal(18, 2)), NULL, CAST(152.00 AS Decimal(18, 2)), NULL, CAST(522.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2020, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (13, 3, NULL, NULL, NULL, CAST(225.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2020, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (14, 1, CAST(200.00 AS Decimal(18, 2)), NULL, NULL, CAST(300.00 AS Decimal(18, 2)), NULL, NULL, NULL, CAST(100.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, 2020, 2)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (15, 2, NULL, NULL, CAST(250.00 AS Decimal(18, 2)), NULL, NULL, CAST(500.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, NULL, 2020, 2)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (16, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2019, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (17, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2019, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (18, 3, CAST(300.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2019, 1)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (19, 1, NULL, NULL, NULL, NULL, CAST(5.00 AS Decimal(18, 2)), NULL, NULL, NULL, NULL, CAST(10.00 AS Decimal(18, 2)), NULL, CAST(30.00 AS Decimal(18, 2)), 2019, 2)
+GO
+INSERT [dbo].[Reconciliation] ([Id], [TypeId], [January], [February], [March], [April], [May], [June], [July], [August], [September], [October], [November], [December], [Year], [StatusId]) VALUES (20, 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, CAST(5.00 AS Decimal(18, 2)), 2019, 2)
+GO
+SET IDENTITY_INSERT [dbo].[Reconciliation] OFF
+GO
+USE [master]
+GO
+ALTER DATABASE [BooKeeping] SET  READ_WRITE 
+GO
