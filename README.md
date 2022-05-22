@@ -1,5 +1,3 @@
-The project is used to store income and expenses according to each month of the Year.
-
 
 # BookKeeping-Solution
 clone the project 
