@@ -1,6 +1,6 @@
 
 # BookKeeping-Solution
-clone the project 
+clone the project --
 git clone https://github.com/RezaulKarimUits/BookKeeping-Solution.git
 
 There are there parts in the cloned project. 
