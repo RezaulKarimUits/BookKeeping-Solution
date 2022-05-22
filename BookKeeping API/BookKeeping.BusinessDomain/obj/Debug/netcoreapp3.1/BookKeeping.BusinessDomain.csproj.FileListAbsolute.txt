@@ -1,0 +1,10 @@
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.BusinessDomain\bin\Debug\netcoreapp3.1\BookKeeping.BusinessDomain.deps.json
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.BusinessDomain\bin\Debug\netcoreapp3.1\BookKeeping.BusinessDomain.dll
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.BusinessDomain\bin\Debug\netcoreapp3.1\BookKeeping.BusinessDomain.pdb
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.BusinessDomain\obj\Debug\netcoreapp3.1\BookKeeping.BusinessDomain.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.BusinessDomain\obj\Debug\netcoreapp3.1\BookKeeping.BusinessDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.BusinessDomain\obj\Debug\netcoreapp3.1\BookKeeping.BusinessDomain.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.BusinessDomain\obj\Debug\netcoreapp3.1\BookKeeping.BusinessDomain.AssemblyInfo.cs
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.BusinessDomain\obj\Debug\netcoreapp3.1\BookKeeping.BusinessDomain.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.BusinessDomain\obj\Debug\netcoreapp3.1\BookKeeping.BusinessDomain.dll
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.BusinessDomain\obj\Debug\netcoreapp3.1\BookKeeping.BusinessDomain.pdb

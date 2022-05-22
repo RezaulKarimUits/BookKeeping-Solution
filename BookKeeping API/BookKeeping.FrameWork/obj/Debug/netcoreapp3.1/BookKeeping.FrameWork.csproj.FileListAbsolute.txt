@@ -1,0 +1,10 @@
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.FrameWork\bin\Debug\netcoreapp3.1\BookKeeping.FrameWork.deps.json
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.FrameWork\bin\Debug\netcoreapp3.1\BookKeeping.FrameWork.dll
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.FrameWork\bin\Debug\netcoreapp3.1\BookKeeping.FrameWork.pdb
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.FrameWork\obj\Debug\netcoreapp3.1\BookKeeping.FrameWork.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.FrameWork\obj\Debug\netcoreapp3.1\BookKeeping.FrameWork.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.FrameWork\obj\Debug\netcoreapp3.1\BookKeeping.FrameWork.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.FrameWork\obj\Debug\netcoreapp3.1\BookKeeping.FrameWork.AssemblyInfo.cs
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.FrameWork\obj\Debug\netcoreapp3.1\BookKeeping.FrameWork.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.FrameWork\obj\Debug\netcoreapp3.1\BookKeeping.FrameWork.dll
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.FrameWork\obj\Debug\netcoreapp3.1\BookKeeping.FrameWork.pdb

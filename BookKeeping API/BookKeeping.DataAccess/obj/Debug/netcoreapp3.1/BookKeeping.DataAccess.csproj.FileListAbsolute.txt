@@ -1,0 +1,13 @@
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\bin\Debug\netcoreapp3.1\BookKeeping.DataAccess.deps.json
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\bin\Debug\netcoreapp3.1\BookKeeping.DataAccess.dll
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\bin\Debug\netcoreapp3.1\BookKeeping.DataAccess.pdb
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\obj\Debug\netcoreapp3.1\BookKeeping.DataAccess.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\obj\Debug\netcoreapp3.1\BookKeeping.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\obj\Debug\netcoreapp3.1\BookKeeping.DataAccess.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\obj\Debug\netcoreapp3.1\BookKeeping.DataAccess.AssemblyInfo.cs
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\obj\Debug\netcoreapp3.1\BookKeeping.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\obj\Debug\netcoreapp3.1\BookKeeping.DataAccess.dll
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\obj\Debug\netcoreapp3.1\BookKeeping.DataAccess.pdb
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\bin\Debug\netcoreapp3.1\BookKeeping.FrameWork.dll
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\bin\Debug\netcoreapp3.1\BookKeeping.FrameWork.pdb
+C:\Users\admin\source\repos\BookKeeping\BookKeeping.DataAccess\obj\Debug\netcoreapp3.1\BookKeeping.DataAccess.csproj.CopyComplete
